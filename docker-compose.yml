@@ -1,0 +1,23 @@
+version: "3.9"
+networks:
+    my_network:
+        external: true
+services:
+    profile_srv:
+        container_name: profile_srv
+        build: set_get_user
+        command: uvicorn api:app --host 0.0.0.0 --port 8888
+        ports:
+            - 8888:8888
+        networks:
+            - my_network
+        depends_on:
+            - db_service
+
+    db_service:
+        container_name: db_service
+        build: db_service
+        ports:
+            - 5433:5433
+        networks:
+            - my_network
