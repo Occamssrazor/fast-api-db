@@ -2,9 +2,9 @@ import psycopg2
 
 dbname = 'postgres'
 user = 'postgres'
-password = 'qweasdzxc123'
-host = 'db_service'
-port = '5433'
+password = 'docker'
+host = 'localhost'
+port = '5432'
 sql_statement = '''CREATE TABLE USERS
 (
     Id SERIAL PRIMARY KEY,

@@ -1,6 +1,6 @@
 import psycopg2
 from psycopg2 import Error
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from fastapi.routing import APIRouter
 from pydantic import BaseModel, validator
@@ -12,7 +12,7 @@ def db_connect():
         user = 'postgres'
         password = 'qweasdzxc123'
         host = 'db_service'
-        port = '5433'
+        port = '5432'
         conn = psycopg2.connect(
                 dbname=dbname, user=user, password=password, host=host, port=port
                )
