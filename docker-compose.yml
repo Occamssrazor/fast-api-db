@@ -8,7 +8,7 @@ services:
         build: set_get_user
         command: uvicorn api:app --host 0.0.0.0 --port 8000
         ports:
-            - 8888:8888
+            - 8000:8000
         networks:
             - my_network
         depends_on:
@@ -18,7 +18,7 @@ services:
         container_name: db_service
         build: db_service
         ports:
-            - 5433:5432
+            - 5432:5432
         networks:
             - my_network
         environment:

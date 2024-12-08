@@ -1,3 +1,4 @@
 FROM postgres
-ENV POSTGRES_PASSWORD docker
-EXPOSE 5433
+ENV POSTGRES_PASSWORD qweasdzxc123
+COPY ./db_connect.py /docker-etrypoint-initdb.d/
+EXPOSE 5432
