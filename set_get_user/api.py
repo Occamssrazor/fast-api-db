@@ -70,11 +70,10 @@ async def get_profile(email: str):
 
 @router.get("/", response_model=list[User])
 async def get_all_profiles():
-  return list(profiles_db.values()) 
+  return list(profiles_db.values())
 
 @app.get("/")
 async def root():
   return {"message": "Добро пожаловать! Введите почту человека через /profiles/ для поиска профиля в базе"}
 
 app.include_router(router)
-

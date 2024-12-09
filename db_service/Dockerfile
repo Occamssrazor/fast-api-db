@@ -1,4 +1,4 @@
 FROM postgres
 ENV POSTGRES_PASSWORD qweasdzxc123
-COPY ./db_connect.py /docker-etrypoint-initdb.d/
+COPY ./init_db.sql /docker-entrypoint-initdb.d/
 EXPOSE 5432
